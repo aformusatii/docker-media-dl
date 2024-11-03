@@ -47,14 +47,14 @@ jobs:
       env:
         ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
       run: |
-        docker tag my_squid $ECR_REGISTRY/$ECR_REGISTRY_ALIAS/media_dl:${{ steps.version.outputs.version }}
+        docker tag media_dl $ECR_REGISTRY/$ECR_REGISTRY_ALIAS/media_dl:${{ steps.version.outputs.version }}
         docker push $ECR_REGISTRY/$ECR_REGISTRY_ALIAS/media_dl:${{ steps.version.outputs.version }}
 
     - name: Tag Latest & Push Docker Image
       env:
         ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
       run: |
-        docker tag my_squid $ECR_REGISTRY/$ECR_REGISTRY_ALIAS/media_dl:latest
+        docker tag media_dl $ECR_REGISTRY/$ECR_REGISTRY_ALIAS/media_dl:latest
         docker push $ECR_REGISTRY/$ECR_REGISTRY_ALIAS/media_dl:latest
 
     - name: Create GitHub Release

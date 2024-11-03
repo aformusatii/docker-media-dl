@@ -2,3 +2,4 @@ media/
 run.sh
 run_dl.sh
 build.sh
+push.sh
