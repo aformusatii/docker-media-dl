@@ -2,6 +2,9 @@ name: Build and Push Docker Image to AWS
 
 on:
   workflow_dispatch:  # This event allows manual triggering
+
+  repository_dispatch:
+    types: [nodered-push]
   
 env:
   AWS_REGION: us-east-1
